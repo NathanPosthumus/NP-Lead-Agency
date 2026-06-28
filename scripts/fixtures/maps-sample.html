@@ -1,0 +1,48 @@
+<!doctype html>
+<!--
+  Minimal stand-in for the Google Maps results DOM, used by scrape-maps.test.mjs
+  to verify the card-extraction selectors and the "has website" detection
+  without needing live access to google.com.
+-->
+<html lang="nl">
+  <body>
+    <div role="feed">
+      <!-- Business WITH a website (should be skipped) -->
+      <div>
+        <div jsaction="mouseover:pane">
+          <a class="hfpxzc" aria-label="Dakdekkersbedrijf De Vakman" href="https://www.google.com/maps/place/De+Vakman"></a>
+          <div class="qBF1Pd">Dakdekkersbedrijf De Vakman</div>
+          <span class="MW4etd">4.8</span>
+          <span class="UY7F9">(120)</span>
+          <div class="W4Efsd">Dakdekker · Hoofdstraat 12, Amsterdam</div>
+          <a data-value="Website" href="https://devakman.nl">Website</a>
+          <span class="UsdlK">020 123 4567</span>
+        </div>
+      </div>
+
+      <!-- Business WITHOUT a website (should be captured) -->
+      <div>
+        <div jsaction="mouseover:pane">
+          <a class="hfpxzc" aria-label="Daktechniek Janssen" href="https://www.google.com/maps/place/Daktechniek+Janssen"></a>
+          <div class="qBF1Pd">Daktechniek Janssen</div>
+          <span class="MW4etd">4.5</span>
+          <span class="UY7F9">(34)</span>
+          <div class="W4Efsd">Dakdekker · Kerkweg 8, Amsterdam</div>
+          <span class="UsdlK">06 12 34 56 78</span>
+        </div>
+      </div>
+
+      <!-- Another business WITHOUT a website -->
+      <div>
+        <div jsaction="mouseover:pane">
+          <a class="hfpxzc" aria-label="Dak & Zink Specialist" href="https://www.google.com/maps/place/Dak+Zink"></a>
+          <div class="qBF1Pd">Dak &amp; Zink Specialist</div>
+          <span class="MW4etd">5.0</span>
+          <span class="UY7F9">(7)</span>
+          <div class="W4Efsd">Dakdekker · Industrieweg 44, Amsterdam</div>
+          <span class="UsdlK">020 765 4321</span>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
